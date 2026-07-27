@@ -1,0 +1,28 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Environment / secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Local/private notes
+notes/
+
+# Raw and generated data
+data/raw/
+data/curated/
+reports/generated/
+manifests/
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Streamlit local config
+.streamlit/secrets.toml
