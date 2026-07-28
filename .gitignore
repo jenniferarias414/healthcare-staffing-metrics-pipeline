@@ -26,3 +26,6 @@ manifests/
 
 # Streamlit local config
 .streamlit/secrets.toml
+
+# Local project source materials / course-provided files
+project-assets/
