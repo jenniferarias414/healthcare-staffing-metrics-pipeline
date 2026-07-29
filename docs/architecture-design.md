@@ -149,14 +149,10 @@ Planned security practices:
 - Environment variables or AWS Secrets Manager for credentials
 - Raw data kept out of the public repository
 
-## Why Not Snowflake or dbt
+## Summary
 
-This project is designed as an AWS-only pipeline. Snowflake and dbt were appropriate for the Walmart project because that project focused on warehouse modeling and dbt transformations.
+I chose this architecture because the project asks for an AWS-only data lake design with Google Drive as the source. 
 
-For this Healthcare project, the design uses AWS-native services and PySpark transformations instead. This better matches the project requirement to stick to AWS services and supports a data lake style architecture.
-
-## Simple Speaking Explanation
-
-I chose this architecture because the project asks for an AWS-only data lake design with Google Drive as the source. The raw files land in S3 first so the original data is preserved. Glue/PySpark handles the transformation layer, which is different from the Walmart project where dbt handled transformations. Curated Parquet tables are stored back in S3, registered in the Glue Data Catalog, queried with Athena, and displayed in Streamlit.
+The raw files land in S3 first so the original data is preserved. Glue/PySpark handles the transformation layer, which is different from the Walmart project where dbt handled transformations. Curated Parquet tables are stored back in S3, registered in the Glue Data Catalog, queried with Athena, and displayed in Streamlit.
 
 The design is intentionally simple: raw storage, transformation, curated storage, query layer, dashboard. It is enough to show an end-to-end pipeline without over-engineering the project.
