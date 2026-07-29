@@ -1,6 +1,6 @@
 # Healthcare Source Profile Report
 
-Generated at UTC: `2026-07-29T16:00:31.169909+00:00`
+Generated at UTC: `2026-07-29T19:52:43.641036+00:00`
 
 ## Master PBJ Staffing File
 
@@ -10,8 +10,10 @@ Generated at UTC: `2026-07-29T16:00:31.169909+00:00`
 - Duplicate provider/date keys: `0`
 - Distinct providers: `14564`
 - Distinct states: `52`
-- WorkDate min: `1970-01-01`
-- WorkDate max: `1970-01-01`
+- WorkDate min: `2024-04-01`
+- WorkDate max: `2024-06-30`
+- WorkDate parse success count: `1325324`
+- WorkDate parse failure count: `0`
 
 ### Metric Readiness
 

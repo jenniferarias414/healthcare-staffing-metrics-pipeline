@@ -206,8 +206,10 @@
         "missing_pct": 0.0
       }
     ],
-    "workdate_min": "1970-01-01",
-    "workdate_max": "1970-01-01",
+    "workdate_min": "2024-04-01",
+    "workdate_max": "2024-06-30",
+    "workdate_parse_success_count": 1325324,
+    "workdate_parse_failure_count": 0,
     "distinct_providers": 14564,
     "distinct_states": 52,
     "states": [
