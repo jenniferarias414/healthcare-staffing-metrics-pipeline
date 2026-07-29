@@ -203,6 +203,7 @@ def main() -> None:
         lines.append(f"- File size bytes: `{master_check['file_size_bytes']}`")
         lines.append(f"- Data row count: `{master_check['data_row_count']}`")
         lines.append(f"- Column count: `{master_check['column_count']}`")
+        lines.append(f"- Encoding used: `{master_check.get('encoding_used')}`")
         lines.append(f"- Expected column count: `{master_check['expected_column_count']}`")
         lines.append(f"- Missing expected columns: `{master_check['missing_expected_columns']}`")
         lines.append(f"- Extra columns: `{master_check['extra_columns']}`")
