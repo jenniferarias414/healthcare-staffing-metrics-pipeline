@@ -52,6 +52,44 @@ CORE_METRIC_COLUMNS = [
 ]
 
 
+def parse_workdate(series: pd.Series) -> pd.Series:
+    """
+    Parse WorkDate defensively.
+
+    Public healthcare files sometimes store dates as:
+    - YYYYMMDD numbers or strings
+    - Excel serial dates
+    - normal date strings
+
+    This function tries the most likely formats and returns a pandas datetime series.
+    """
+    raw = series.copy()
+
+    # First try YYYYMMDD, which is common for numeric date fields.
+    as_str = (
+        raw.astype("string")
+        .str.strip()
+        .str.replace(r"\.0$", "", regex=True)
+    )
+
+    yyyymmdd_mask = as_str.str.fullmatch(r"\d{8}", na=False)
+    if yyyymmdd_mask.mean() > 0.8:
+        return pd.to_datetime(as_str, format="%Y%m%d", errors="coerce")
+
+    # Then try Excel serial dates.
+    numeric = pd.to_numeric(raw, errors="coerce")
+    if numeric.notna().any():
+        min_value = numeric.min()
+        max_value = numeric.max()
+
+        # Excel serial dates for modern dates are usually in this range.
+        if 20000 <= min_value <= 60000 and 20000 <= max_value <= 60000:
+            return pd.to_datetime(numeric, unit="D", origin="1899-12-30", errors="coerce")
+
+    # Fallback to pandas general parser.
+    return pd.to_datetime(raw, errors="coerce")
+
+
 def find_one_file(pattern: str) -> Path:
     matches = list(ASSET_DIR.rglob(pattern))
     if not matches:
@@ -118,9 +156,11 @@ def profile_master(master_path: Path) -> tuple[dict, pd.DataFrame]:
 
     profile = summarize_dataframe(df, MASTER_KEY_COLUMNS)
 
-    date_series = pd.to_datetime(df["WorkDate"], errors="coerce")
+    date_series = parse_workdate(df["WorkDate"])
     profile["workdate_min"] = str(date_series.min().date()) if date_series.notna().any() else None
     profile["workdate_max"] = str(date_series.max().date()) if date_series.notna().any() else None
+    profile["workdate_parse_success_count"] = int(date_series.notna().sum())
+    profile["workdate_parse_failure_count"] = int(date_series.isna().sum())
     profile["distinct_providers"] = int(df["PROVNUM"].nunique())
     profile["distinct_states"] = int(df["STATE"].nunique())
     profile["states"] = sorted(df["STATE"].dropna().unique().tolist())
@@ -271,6 +311,8 @@ def write_markdown_report(master_profile: dict, supporting_profiles: list[dict])
     lines.append(f"- Distinct states: `{master_profile['distinct_states']}`")
     lines.append(f"- WorkDate min: `{master_profile['workdate_min']}`")
     lines.append(f"- WorkDate max: `{master_profile['workdate_max']}`")
+    lines.append(f"- WorkDate parse success count: `{master_profile['workdate_parse_success_count']}`")
+    lines.append(f"- WorkDate parse failure count: `{master_profile['workdate_parse_failure_count']}`")
     lines.append("")
 
     lines.append("### Metric Readiness")
