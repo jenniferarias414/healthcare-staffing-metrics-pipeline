@@ -1,0 +1,1690 @@
+{
+  "master_profile": {
+    "row_count": 1325324,
+    "column_count": 33,
+    "columns": [
+      "PROVNUM",
+      "PROVNAME",
+      "CITY",
+      "STATE",
+      "COUNTY_NAME",
+      "COUNTY_FIPS",
+      "CY_Qtr",
+      "WorkDate",
+      "MDScensus",
+      "Hrs_RNDON",
+      "Hrs_RNDON_emp",
+      "Hrs_RNDON_ctr",
+      "Hrs_RNadmin",
+      "Hrs_RNadmin_emp",
+      "Hrs_RNadmin_ctr",
+      "Hrs_RN",
+      "Hrs_RN_emp",
+      "Hrs_RN_ctr",
+      "Hrs_LPNadmin",
+      "Hrs_LPNadmin_emp",
+      "Hrs_LPNadmin_ctr",
+      "Hrs_LPN",
+      "Hrs_LPN_emp",
+      "Hrs_LPN_ctr",
+      "Hrs_CNA",
+      "Hrs_CNA_emp",
+      "Hrs_CNA_ctr",
+      "Hrs_NAtrn",
+      "Hrs_NAtrn_emp",
+      "Hrs_NAtrn_ctr",
+      "Hrs_MedAide",
+      "Hrs_MedAide_emp",
+      "Hrs_MedAide_ctr"
+    ],
+    "duplicate_full_rows": 0,
+    "duplicate_key_count": 0,
+    "missing_summary": [
+      {
+        "column": "PROVNUM",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_RN_ctr",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_MedAide_emp",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_MedAide",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_NAtrn_ctr",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_NAtrn_emp",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_NAtrn",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_CNA_ctr",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_CNA_emp",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_CNA",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_LPN_ctr",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_LPN_emp",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_LPN",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_LPNadmin_ctr",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_LPNadmin_emp",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_LPNadmin",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_RN_emp",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "PROVNAME",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_RN",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_RNadmin_ctr",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_RNadmin_emp",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_RNadmin",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_RNDON_ctr",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_RNDON_emp",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_RNDON",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "MDScensus",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "WorkDate",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "CY_Qtr",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "COUNTY_FIPS",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "COUNTY_NAME",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "STATE",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "CITY",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      },
+      {
+        "column": "Hrs_MedAide_ctr",
+        "missing_count": 0,
+        "missing_pct": 0.0
+      }
+    ],
+    "workdate_min": "1970-01-01",
+    "workdate_max": "1970-01-01",
+    "distinct_providers": 14564,
+    "distinct_states": 52,
+    "states": [
+      "AK",
+      "AL",
+      "AR",
+      "AZ",
+      "CA",
+      "CO",
+      "CT",
+      "DC",
+      "DE",
+      "FL",
+      "GA",
+      "HI",
+      "IA",
+      "ID",
+      "IL",
+      "IN",
+      "KS",
+      "KY",
+      "LA",
+      "MA",
+      "MD",
+      "ME",
+      "MI",
+      "MN",
+      "MO",
+      "MS",
+      "MT",
+      "NC",
+      "ND",
+      "NE",
+      "NH",
+      "NJ",
+      "NM",
+      "NV",
+      "NY",
+      "OH",
+      "OK",
+      "OR",
+      "PA",
+      "PR",
+      "RI",
+      "SC",
+      "SD",
+      "TN",
+      "TX",
+      "UT",
+      "VA",
+      "VT",
+      "WA",
+      "WI",
+      "WV",
+      "WY"
+    ],
+    "numeric_summary": {
+      "MDScensus": {
+        "min": 0.0,
+        "max": 742.0,
+        "mean": 83.4167003691173,
+        "zero_count": 320,
+        "negative_count": 0,
+        "missing_count": 0
+      },
+      "Hrs_RNDON": {
+        "min": 0.0,
+        "max": 103.96,
+        "mean": 5.195886892563629,
+        "zero_count": 495886,
+        "negative_count": 0,
+        "missing_count": 0
+      },
+      "Hrs_RNadmin": {
+        "min": 0.0,
+        "max": 275.5,
+        "mean": 10.262754164264738,
+        "zero_count": 579234,
+        "negative_count": 0,
+        "missing_count": 0
+      },
+      "Hrs_RN": {
+        "min": 0.0,
+        "max": 915.98,
+        "mean": 34.80191902508368,
+        "zero_count": 89326,
+        "negative_count": 0,
+        "missing_count": 0
+      },
+      "Hrs_LPNadmin": {
+        "min": 0.0,
+        "max": 281.5,
+        "mean": 6.712468679356896,
+        "zero_count": 753768,
+        "negative_count": 0,
+        "missing_count": 0
+      },
+      "Hrs_LPN": {
+        "min": 0.0,
+        "max": 13946.25,
+        "mean": 66.17242316595791,
+        "zero_count": 32697,
+        "negative_count": 0,
+        "missing_count": 0
+      },
+      "Hrs_CNA": {
+        "min": 0.0,
+        "max": 1758.1,
+        "mean": 173.79076031974068,
+        "zero_count": 5785,
+        "negative_count": 0,
+        "missing_count": 0
+      },
+      "Hrs_NAtrn": {
+        "min": 0.0,
+        "max": 443.75,
+        "mean": 4.314155036806095,
+        "zero_count": 1075892,
+        "negative_count": 0,
+        "missing_count": 0
+      },
+      "Hrs_MedAide": {
+        "min": 0.0,
+        "max": 429.8,
+        "mean": 8.578326575237451,
+        "zero_count": 916991,
+        "negative_count": 0,
+        "missing_count": 0
+      }
+    },
+    "metric_readiness": {
+      "rows_with_positive_census": 1325004,
+      "rows_with_zero_or_missing_census": 320,
+      "rows_with_positive_total_nurse_hours": 1322216,
+      "rows_with_zero_total_nurse_hours": 3108
+    }
+  },
+  "supporting_profiles": [
+    {
+      "file_name": "FY_2024_SNF_VBP_Aggregate_Performance.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/FY_2024_SNF_VBP_Aggregate_Performance.csv",
+      "row_count": 1,
+      "column_count": 9,
+      "columns": [
+        "Baseline Period: FY 2019 National Average Readmission Rate",
+        "Performance Period: FY 2022 National Average Readmission Rate",
+        "FY 2024 Achievement Threshold",
+        "FY 2024 Benchmark",
+        "Range of Performance Scores",
+        "Total Number of SNFs Receiving Value-Based Incentive Payments",
+        "Range of Incentive Payment Multipliers",
+        "Range of Value-Based Incentive Payments ($)",
+        "Total Amount of Value-Based Incentive Payments ($)"
+      ],
+      "possible_provider_keys": [],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "Baseline Period: FY 2019 National Average Readmission Rate",
+          "missing_count": 0
+        },
+        {
+          "column": "Performance Period: FY 2022 National Average Readmission Rate",
+          "missing_count": 0
+        },
+        {
+          "column": "FY 2024 Achievement Threshold",
+          "missing_count": 0
+        },
+        {
+          "column": "FY 2024 Benchmark",
+          "missing_count": 0
+        },
+        {
+          "column": "Range of Performance Scores",
+          "missing_count": 0
+        },
+        {
+          "column": "Total Number of SNFs Receiving Value-Based Incentive Payments",
+          "missing_count": 0
+        },
+        {
+          "column": "Range of Incentive Payment Multipliers",
+          "missing_count": 0
+        },
+        {
+          "column": "Range of Value-Based Incentive Payments ($)",
+          "missing_count": 0
+        },
+        {
+          "column": "Total Amount of Value-Based Incentive Payments ($)",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "FY_2024_SNF_VBP_Facility_Performance.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/FY_2024_SNF_VBP_Facility_Performance.csv",
+      "row_count": 10858,
+      "column_count": 20,
+      "columns": [
+        "SNF VBP Program Ranking",
+        "Footnote -- SNF VBP Program Ranking",
+        "CMS Certification Number (CCN)",
+        "Provider Name",
+        "Provider Address",
+        "City/Town",
+        "State",
+        "ZIP Code",
+        "Baseline Period: FY 2019 Risk-Standardized Readmission Rate",
+        "Footnote -- Baseline Period: FY 2019 Risk-Standardized Readmission Rate",
+        "Performance Period: FY 2022 Risk-Standardized Readmission Rate",
+        "Footnote -- Performance Period: FY 2022 Risk-Standardized Readmission Rate",
+        "Achievement Score",
+        "Footnote -- Achievement Score",
+        "Improvement Score",
+        "Footnote -- Improvement Score",
+        "Performance Score",
+        "Footnote -- Performance Score",
+        "Incentive Payment Multiplier",
+        "Footnote -- Incentive Payment Multiplier"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "Footnote -- Incentive Payment Multiplier",
+          "missing_count": 10858
+        },
+        {
+          "column": "Footnote -- Performance Period: FY 2022 Risk-Standardized Readmission Rate",
+          "missing_count": 10858
+        },
+        {
+          "column": "Footnote -- Performance Score",
+          "missing_count": 10858
+        },
+        {
+          "column": "Footnote -- Achievement Score",
+          "missing_count": 10858
+        },
+        {
+          "column": "Footnote -- SNF VBP Program Ranking",
+          "missing_count": 10858
+        },
+        {
+          "column": "Footnote -- Improvement Score",
+          "missing_count": 10341
+        },
+        {
+          "column": "Footnote -- Baseline Period: FY 2019 Risk-Standardized Readmission Rate",
+          "missing_count": 10341
+        },
+        {
+          "column": "Incentive Payment Multiplier",
+          "missing_count": 0
+        },
+        {
+          "column": "Performance Score",
+          "missing_count": 0
+        },
+        {
+          "column": "Improvement Score",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "NH_CitationDescriptions_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_CitationDescriptions_Oct2024.csv",
+      "row_count": 641,
+      "column_count": 5,
+      "columns": [
+        "Deficiency Prefix",
+        "Deficiency Tag Number",
+        "Deficiency Prefix and Number",
+        "Deficiency Description",
+        "Deficiency Category"
+      ],
+      "possible_provider_keys": [],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "Deficiency Prefix",
+          "missing_count": 0
+        },
+        {
+          "column": "Deficiency Tag Number",
+          "missing_count": 0
+        },
+        {
+          "column": "Deficiency Prefix and Number",
+          "missing_count": 0
+        },
+        {
+          "column": "Deficiency Description",
+          "missing_count": 0
+        },
+        {
+          "column": "Deficiency Category",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "NH_CovidVaxAverages_20241027.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_CovidVaxAverages_20241027.csv",
+      "row_count": 54,
+      "column_count": 4,
+      "columns": [
+        "State",
+        "Percent of residents who are up-to-date on their vaccines",
+        "Percent of staff who are up-to-date on their vaccines",
+        "Date vaccination data last updated"
+      ],
+      "possible_provider_keys": [],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "State",
+          "missing_count": 0
+        },
+        {
+          "column": "Percent of residents who are up-to-date on their vaccines",
+          "missing_count": 0
+        },
+        {
+          "column": "Percent of staff who are up-to-date on their vaccines",
+          "missing_count": 0
+        },
+        {
+          "column": "Date vaccination data last updated",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "NH_CovidVaxProvider_20241027.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_CovidVaxProvider_20241027.csv",
+      "row_count": 14814,
+      "column_count": 5,
+      "columns": [
+        "CMS Certification Number (CCN)",
+        "State",
+        "Percent of residents who are up-to-date on their vaccines",
+        "Percent of staff who are up-to-date on their vaccines",
+        "Date vaccination data last updated"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "CMS Certification Number (CCN)",
+          "missing_count": 0
+        },
+        {
+          "column": "State",
+          "missing_count": 0
+        },
+        {
+          "column": "Percent of residents who are up-to-date on their vaccines",
+          "missing_count": 0
+        },
+        {
+          "column": "Percent of staff who are up-to-date on their vaccines",
+          "missing_count": 0
+        },
+        {
+          "column": "Date vaccination data last updated",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "NH_DataCollectionIntervals_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_DataCollectionIntervals_Oct2024.csv",
+      "row_count": 45,
+      "column_count": 6,
+      "columns": [
+        "Measure Code",
+        "Measure Description",
+        "Data Collection Period From Date",
+        "Data Collection Period Through Date",
+        "Measure Date Range",
+        "Processing Date"
+      ],
+      "possible_provider_keys": [],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "Measure Date Range",
+          "missing_count": 45
+        },
+        {
+          "column": "Measure Code",
+          "missing_count": 0
+        },
+        {
+          "column": "Measure Description",
+          "missing_count": 0
+        },
+        {
+          "column": "Data Collection Period From Date",
+          "missing_count": 0
+        },
+        {
+          "column": "Data Collection Period Through Date",
+          "missing_count": 0
+        },
+        {
+          "column": "Processing Date",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "NH_FireSafetyCitations_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_FireSafetyCitations_Oct2024.csv",
+      "row_count": 200003,
+      "column_count": 24,
+      "columns": [
+        "CMS Certification Number (CCN)",
+        "Provider Name",
+        "Provider Address",
+        "City/Town",
+        "State",
+        "ZIP Code",
+        "Survey Date",
+        "Survey Type",
+        "Deficiency Prefix",
+        "Deficiency Category",
+        "Deficiency Tag Number",
+        "Tag Version",
+        "Deficiency Description",
+        "Scope Severity Code",
+        "Deficiency Corrected",
+        "Correction Date",
+        "Inspection Cycle",
+        "Standard Deficiency",
+        "Complaint Deficiency",
+        "Infection Control Inspection Deficiency",
+        "Citation under IDR",
+        "Citation under IIDR",
+        "Location",
+        "Processing Date"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "Correction Date",
+          "missing_count": 1054
+        },
+        {
+          "column": "CMS Certification Number (CCN)",
+          "missing_count": 0
+        },
+        {
+          "column": "Provider Name",
+          "missing_count": 0
+        },
+        {
+          "column": "Location",
+          "missing_count": 0
+        },
+        {
+          "column": "Citation under IIDR",
+          "missing_count": 0
+        },
+        {
+          "column": "Citation under IDR",
+          "missing_count": 0
+        },
+        {
+          "column": "Infection Control Inspection Deficiency",
+          "missing_count": 0
+        },
+        {
+          "column": "Complaint Deficiency",
+          "missing_count": 0
+        },
+        {
+          "column": "Standard Deficiency",
+          "missing_count": 0
+        },
+        {
+          "column": "Inspection Cycle",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "NH_HealthCitations_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_HealthCitations_Oct2024.csv",
+      "row_count": 402424,
+      "column_count": 23,
+      "columns": [
+        "CMS Certification Number (CCN)",
+        "Provider Name",
+        "Provider Address",
+        "City/Town",
+        "State",
+        "ZIP Code",
+        "Survey Date",
+        "Survey Type",
+        "Deficiency Prefix",
+        "Deficiency Category",
+        "Deficiency Tag Number",
+        "Deficiency Description",
+        "Scope Severity Code",
+        "Deficiency Corrected",
+        "Correction Date",
+        "Inspection Cycle",
+        "Standard Deficiency",
+        "Complaint Deficiency",
+        "Infection Control Inspection Deficiency",
+        "Citation under IDR",
+        "Citation under IIDR",
+        "Location",
+        "Processing Date"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "Correction Date",
+          "missing_count": 1353
+        },
+        {
+          "column": "CMS Certification Number (CCN)",
+          "missing_count": 0
+        },
+        {
+          "column": "Scope Severity Code",
+          "missing_count": 0
+        },
+        {
+          "column": "Location",
+          "missing_count": 0
+        },
+        {
+          "column": "Citation under IIDR",
+          "missing_count": 0
+        },
+        {
+          "column": "Citation under IDR",
+          "missing_count": 0
+        },
+        {
+          "column": "Infection Control Inspection Deficiency",
+          "missing_count": 0
+        },
+        {
+          "column": "Complaint Deficiency",
+          "missing_count": 0
+        },
+        {
+          "column": "Standard Deficiency",
+          "missing_count": 0
+        },
+        {
+          "column": "Inspection Cycle",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "NH_HlthInspecCutpointsState_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_HlthInspecCutpointsState_Oct2024.csv",
+      "row_count": 53,
+      "column_count": 6,
+      "columns": [
+        "State",
+        "5 Stars",
+        "4 Stars",
+        "3 Stars",
+        "2 Stars",
+        "1 Star"
+      ],
+      "possible_provider_keys": [],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "State",
+          "missing_count": 0
+        },
+        {
+          "column": "5 Stars",
+          "missing_count": 0
+        },
+        {
+          "column": "4 Stars",
+          "missing_count": 0
+        },
+        {
+          "column": "3 Stars",
+          "missing_count": 0
+        },
+        {
+          "column": "2 Stars",
+          "missing_count": 0
+        },
+        {
+          "column": "1 Star",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "NH_Ownership_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_Ownership_Oct2024.csv",
+      "row_count": 145354,
+      "column_count": 13,
+      "columns": [
+        "CMS Certification Number (CCN)",
+        "Provider Name",
+        "Provider Address",
+        "City/Town",
+        "State",
+        "ZIP Code",
+        "Role played by Owner or Manager in Facility",
+        "Owner Type",
+        "Owner Name",
+        "Ownership Percentage",
+        "Association Date",
+        "Location",
+        "Processing Date"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "Owner Type",
+          "missing_count": 543
+        },
+        {
+          "column": "Owner Name",
+          "missing_count": 543
+        },
+        {
+          "column": "Ownership Percentage",
+          "missing_count": 543
+        },
+        {
+          "column": "Association Date",
+          "missing_count": 543
+        },
+        {
+          "column": "CMS Certification Number (CCN)",
+          "missing_count": 0
+        },
+        {
+          "column": "Provider Name",
+          "missing_count": 0
+        },
+        {
+          "column": "Provider Address",
+          "missing_count": 0
+        },
+        {
+          "column": "City/Town",
+          "missing_count": 0
+        },
+        {
+          "column": "State",
+          "missing_count": 0
+        },
+        {
+          "column": "ZIP Code",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "NH_Penalties_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_Penalties_Oct2024.csv",
+      "row_count": 28505,
+      "column_count": 13,
+      "columns": [
+        "CMS Certification Number (CCN)",
+        "Provider Name",
+        "Provider Address",
+        "City/Town",
+        "State",
+        "ZIP Code",
+        "Penalty Date",
+        "Penalty Type",
+        "Fine Amount",
+        "Payment Denial Start Date",
+        "Payment Denial Length in Days",
+        "Location",
+        "Processing Date"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "Payment Denial Start Date",
+          "missing_count": 25338
+        },
+        {
+          "column": "Payment Denial Length in Days",
+          "missing_count": 25338
+        },
+        {
+          "column": "Fine Amount",
+          "missing_count": 3167
+        },
+        {
+          "column": "CMS Certification Number (CCN)",
+          "missing_count": 0
+        },
+        {
+          "column": "Provider Name",
+          "missing_count": 0
+        },
+        {
+          "column": "Provider Address",
+          "missing_count": 0
+        },
+        {
+          "column": "City/Town",
+          "missing_count": 0
+        },
+        {
+          "column": "State",
+          "missing_count": 0
+        },
+        {
+          "column": "ZIP Code",
+          "missing_count": 0
+        },
+        {
+          "column": "Penalty Date",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "NH_ProviderInfo_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_ProviderInfo_Oct2024.csv",
+      "row_count": 14814,
+      "column_count": 103,
+      "columns": [
+        "CMS Certification Number (CCN)",
+        "Provider Name",
+        "Provider Address",
+        "City/Town",
+        "State",
+        "ZIP Code",
+        "Telephone Number",
+        "Provider SSA County Code",
+        "County/Parish",
+        "Ownership Type",
+        "Number of Certified Beds",
+        "Average Number of Residents per Day",
+        "Average Number of Residents per Day Footnote",
+        "Provider Type",
+        "Provider Resides in Hospital",
+        "Legal Business Name",
+        "Date First Approved to Provide Medicare and Medicaid Services",
+        "Affiliated Entity Name",
+        "Affiliated Entity ID",
+        "Continuing Care Retirement Community",
+        "Special Focus Status",
+        "Abuse Icon",
+        "Most Recent Health Inspection More Than 2 Years Ago",
+        "Provider Changed Ownership in Last 12 Months",
+        "With a Resident and Family Council",
+        "Automatic Sprinkler Systems in All Required Areas",
+        "Overall Rating",
+        "Overall Rating Footnote",
+        "Health Inspection Rating",
+        "Health Inspection Rating Footnote",
+        "QM Rating",
+        "QM Rating Footnote",
+        "Long-Stay QM Rating",
+        "Long-Stay QM Rating Footnote",
+        "Short-Stay QM Rating",
+        "Short-Stay QM Rating Footnote",
+        "Staffing Rating",
+        "Staffing Rating Footnote",
+        "Reported Staffing Footnote",
+        "Physical Therapist Staffing Footnote",
+        "Reported Nurse Aide Staffing Hours per Resident per Day",
+        "Reported LPN Staffing Hours per Resident per Day",
+        "Reported RN Staffing Hours per Resident per Day",
+        "Reported Licensed Staffing Hours per Resident per Day",
+        "Reported Total Nurse Staffing Hours per Resident per Day",
+        "Total number of nurse staff hours per resident per day on the weekend",
+        "Registered Nurse hours per resident per day on the weekend",
+        "Reported Physical Therapist Staffing Hours per Resident Per Day",
+        "Total nursing staff turnover",
+        "Total nursing staff turnover footnote",
+        "Registered Nurse turnover",
+        "Registered Nurse turnover footnote",
+        "Number of administrators who have left the nursing home",
+        "Administrator turnover footnote",
+        "Nursing Case-Mix Index",
+        "Nursing Case-Mix Index Ratio",
+        "Case-Mix Nurse Aide Staffing Hours per Resident per Day",
+        "Case-Mix LPN Staffing Hours per Resident per Day",
+        "Case-Mix RN Staffing Hours per Resident per Day",
+        "Case-Mix Total Nurse Staffing Hours per Resident per Day",
+        "Case-Mix Weekend Total Nurse Staffing Hours per Resident per Day",
+        "Adjusted Nurse Aide Staffing Hours per Resident per Day",
+        "Adjusted LPN Staffing Hours per Resident per Day",
+        "Adjusted RN Staffing Hours per Resident per Day",
+        "Adjusted Total Nurse Staffing Hours per Resident per Day",
+        "Adjusted Weekend Total Nurse Staffing Hours per Resident per Day",
+        "Rating Cycle 1 Standard Survey Health Date",
+        "Rating Cycle 1 Total Number of Health Deficiencies",
+        "Rating Cycle 1 Number of Standard Health Deficiencies",
+        "Rating Cycle 1 Number of Complaint Health Deficiencies",
+        "Rating Cycle 1 Health Deficiency Score",
+        "Rating Cycle 1 Number of Health Revisits",
+        "Rating Cycle 1 Health Revisit Score",
+        "Rating Cycle 1 Total Health Score",
+        "Rating Cycle 2 Standard Health Survey Date",
+        "Rating Cycle 2 Total Number of Health Deficiencies",
+        "Rating Cycle 2 Number of Standard Health Deficiencies",
+        "Rating Cycle 2 Number of Complaint Health Deficiencies",
+        "Rating Cycle 2 Health Deficiency Score",
+        "Rating Cycle 2 Number of Health Revisits",
+        "Rating Cycle 2 Health Revisit Score",
+        "Rating Cycle 2 Total Health Score",
+        "Rating Cycle 3 Standard Health Survey Date",
+        "Rating Cycle 3 Total Number of Health Deficiencies",
+        "Rating Cycle 3 Number of Standard Health Deficiencies",
+        "Rating Cycle 3 Number of Complaint Health Deficiencies",
+        "Rating Cycle 3 Health Deficiency Score",
+        "Rating Cycle 3 Number of Health Revisits",
+        "Rating Cycle 3 Health Revisit Score",
+        "Rating Cycle 3 Total Health Score",
+        "Total Weighted Health Survey Score",
+        "Number of Facility Reported Incidents",
+        "Number of Substantiated Complaints",
+        "Number of Citations from Infection Control Inspections",
+        "Number of Fines",
+        "Total Amount of Fines in Dollars",
+        "Number of Payment Denials",
+        "Total Number of Penalties",
+        "Location",
+        "Latitude",
+        "Longitude",
+        "Geocoding Footnote",
+        "Processing Date"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "Average Number of Residents per Day Footnote",
+          "missing_count": 14766
+        },
+        {
+          "column": "Health Inspection Rating Footnote",
+          "missing_count": 14671
+        },
+        {
+          "column": "Overall Rating Footnote",
+          "missing_count": 14671
+        },
+        {
+          "column": "QM Rating Footnote",
+          "missing_count": 14452
+        },
+        {
+          "column": "Physical Therapist Staffing Footnote",
+          "missing_count": 14428
+        },
+        {
+          "column": "Reported Staffing Footnote",
+          "missing_count": 14428
+        },
+        {
+          "column": "Special Focus Status",
+          "missing_count": 14287
+        },
+        {
+          "column": "Long-Stay QM Rating Footnote",
+          "missing_count": 14112
+        },
+        {
+          "column": "Geocoding Footnote",
+          "missing_count": 14018
+        },
+        {
+          "column": "Staffing Rating Footnote",
+          "missing_count": 13831
+        }
+      ]
+    },
+    {
+      "file_name": "NH_QualityMsr_Claims_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_QualityMsr_Claims_Oct2024.csv",
+      "row_count": 59256,
+      "column_count": 17,
+      "columns": [
+        "CMS Certification Number (CCN)",
+        "Provider Name",
+        "Provider Address",
+        "City/Town",
+        "State",
+        "ZIP Code",
+        "Measure Code",
+        "Measure Description",
+        "Resident type",
+        "Adjusted Score",
+        "Observed Score",
+        "Expected Score",
+        "Footnote for Score",
+        "Used in Quality Measure Five Star Rating",
+        "Measure Period",
+        "Location",
+        "Processing Date"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "Footnote for Score",
+          "missing_count": 47132
+        },
+        {
+          "column": "Adjusted Score",
+          "missing_count": 12124
+        },
+        {
+          "column": "Expected Score",
+          "missing_count": 12124
+        },
+        {
+          "column": "Observed Score",
+          "missing_count": 12124
+        },
+        {
+          "column": "CMS Certification Number (CCN)",
+          "missing_count": 0
+        },
+        {
+          "column": "Location",
+          "missing_count": 0
+        },
+        {
+          "column": "Measure Period",
+          "missing_count": 0
+        },
+        {
+          "column": "Used in Quality Measure Five Star Rating",
+          "missing_count": 0
+        },
+        {
+          "column": "Resident type",
+          "missing_count": 0
+        },
+        {
+          "column": "Provider Name",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "NH_QualityMsr_MDS_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_QualityMsr_MDS_Oct2024.csv",
+      "row_count": 266652,
+      "column_count": 23,
+      "columns": [
+        "CMS Certification Number (CCN)",
+        "Provider Name",
+        "Provider Address",
+        "City/Town",
+        "State",
+        "ZIP Code",
+        "Measure Code",
+        "Measure Description",
+        "Resident type",
+        "Q1 Measure Score",
+        "Footnote for Q1 Measure Score",
+        "Q2 Measure Score",
+        "Footnote for Q2 Measure Score",
+        "Q3 Measure Score",
+        "Footnote for Q3 Measure Score",
+        "Q4 Measure Score",
+        "Footnote for Q4 Measure Score",
+        "Four Quarter Average Score",
+        "Footnote for Four Quarter Average Score",
+        "Used in Quality Measure Five Star Rating",
+        "Measure Period",
+        "Location",
+        "Processing Date"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "Footnote for Four Quarter Average Score",
+          "missing_count": 255901
+        },
+        {
+          "column": "Footnote for Q4 Measure Score",
+          "missing_count": 229902
+        },
+        {
+          "column": "Footnote for Q3 Measure Score",
+          "missing_count": 229421
+        },
+        {
+          "column": "Footnote for Q2 Measure Score",
+          "missing_count": 228248
+        },
+        {
+          "column": "Footnote for Q1 Measure Score",
+          "missing_count": 227817
+        },
+        {
+          "column": "Q1 Measure Score",
+          "missing_count": 38835
+        },
+        {
+          "column": "Q2 Measure Score",
+          "missing_count": 38404
+        },
+        {
+          "column": "Q3 Measure Score",
+          "missing_count": 37231
+        },
+        {
+          "column": "Q4 Measure Score",
+          "missing_count": 36750
+        },
+        {
+          "column": "Four Quarter Average Score",
+          "missing_count": 10751
+        }
+      ]
+    },
+    {
+      "file_name": "NH_StateUSAverages_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_StateUSAverages_Oct2024.csv",
+      "row_count": 54,
+      "column_count": 48,
+      "columns": [
+        "State or Nation",
+        "Cycle 1 Total Number of Health Deficiencies",
+        "Cycle 1 Total Number of Fire Safety Deficiencies",
+        "Cycle 2 Total Number of Health Deficiencies",
+        "Cycle 2 Total Number of Fire Safety Deficiencies",
+        "Cycle 3 Total Number of Health Deficiencies",
+        "Cycle 3 Total Number of Fire Safety Deficiencies",
+        "Average Number of Residents per Day",
+        "Reported Nurse Aide Staffing Hours per Resident per Day",
+        "Reported LPN Staffing Hours per Resident per Day",
+        "Reported RN Staffing Hours per Resident per Day",
+        "Reported Licensed Staffing Hours per Resident per Day",
+        "Reported Total Nurse Staffing Hours per Resident per Day",
+        "Total number of nurse staff hours per resident per day on the weekend",
+        "Registered Nurse hours per resident per day on the weekend",
+        "Reported Physical Therapist Staffing Hours per Resident Per Day",
+        "Total nursing staff turnover",
+        "Registered Nurse turnover",
+        "Number of administrators who have left the nursing home",
+        "Nursing Case-Mix Index",
+        "Case-Mix RN Staffing Hours per Resident per Day",
+        "Case-Mix Total Nurse Staffing Hours per Resident per Day",
+        "Case-Mix Weekend Total Nurse Staffing Hours per Resident per Day",
+        "Number of Fines",
+        "Fine Amount in Dollars",
+        "Percentage of long stay residents whose need for help with daily activities has increased",
+        "Percentage of long stay residents who lose too much weight",
+        "Percentage of low risk long stay residents who lose control of their bowels or bladder",
+        "Percentage of long stay residents with a catheter inserted and left in their bladder",
+        "Percentage of long stay residents with a urinary tract infection",
+        "Percentage of long stay residents who have depressive symptoms",
+        "Percentage of long stay residents who were physically restrained",
+        "Percentage of long stay residents experiencing one or more falls with major injury",
+        "Percentage of long stay residents assessed and appropriately given the pneumococcal vaccine",
+        "Percentage of long stay residents who received an antipsychotic medication",
+        "Percentage of short stay residents assessed and appropriately given the pneumococcal vaccine",
+        "Percentage of short stay residents who newly received an antipsychotic medication",
+        "Percentage of long stay residents whose ability to move independently worsened",
+        "Percentage of long stay residents who received an antianxiety or hypnotic medication",
+        "Percentage of high risk long stay residents with pressure ulcers",
+        "Percentage of long stay residents assessed and appropriately given the seasonal influenza vaccine",
+        "Percentage of short stay residents who made improvements in function",
+        "Percentage of short stay residents who were assessed and appropriately given the seasonal influenza vaccine",
+        "Percentage of short stay residents who were rehospitalized after a nursing home admission",
+        "Percentage of short stay residents who had an outpatient emergency department visit",
+        "Number of hospitalizations per 1000 long-stay resident days",
+        "Number of outpatient emergency department visits per 1000 long-stay resident days",
+        "Processing Date"
+      ],
+      "possible_provider_keys": [],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "Percentage of long stay residents who received an antianxiety or hypnotic medication",
+          "missing_count": 2
+        },
+        {
+          "column": "Percentage of long stay residents who have depressive symptoms",
+          "missing_count": 2
+        },
+        {
+          "column": "Percentage of long stay residents whose ability to move independently worsened",
+          "missing_count": 2
+        },
+        {
+          "column": "Percentage of long stay residents assessed and appropriately given the seasonal influenza vaccine",
+          "missing_count": 2
+        },
+        {
+          "column": "Percentage of long stay residents whose need for help with daily activities has increased",
+          "missing_count": 2
+        },
+        {
+          "column": "Percentage of long stay residents who lose too much weight",
+          "missing_count": 2
+        },
+        {
+          "column": "Percentage of low risk long stay residents who lose control of their bowels or bladder",
+          "missing_count": 2
+        },
+        {
+          "column": "Percentage of long stay residents with a catheter inserted and left in their bladder",
+          "missing_count": 2
+        },
+        {
+          "column": "Percentage of long stay residents with a urinary tract infection",
+          "missing_count": 2
+        },
+        {
+          "column": "Percentage of long stay residents who were physically restrained",
+          "missing_count": 2
+        }
+      ]
+    },
+    {
+      "file_name": "NH_SurveyDates_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_SurveyDates_Oct2024.csv",
+      "row_count": 159723,
+      "column_count": 5,
+      "columns": [
+        "CMS Certification Number (CCN)",
+        "Survey Date",
+        "Type of Survey",
+        "Survey Cycle",
+        "Processing Date"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "CMS Certification Number (CCN)",
+          "missing_count": 0
+        },
+        {
+          "column": "Survey Date",
+          "missing_count": 0
+        },
+        {
+          "column": "Type of Survey",
+          "missing_count": 0
+        },
+        {
+          "column": "Survey Cycle",
+          "missing_count": 0
+        },
+        {
+          "column": "Processing Date",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "NH_SurveySummary_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/NH_SurveySummary_Oct2024.csv",
+      "row_count": 44243,
+      "column_count": 41,
+      "columns": [
+        "CMS Certification Number (CCN)",
+        "Provider Name",
+        "Provider Address",
+        "City/Town",
+        "State",
+        "ZIP Code",
+        "Inspection Cycle",
+        "Health Survey Date",
+        "Fire Safety Survey Date",
+        "Total Number of Health Deficiencies",
+        "Total Number of Fire Safety Deficiencies",
+        "Count of Freedom from Abuse and Neglect and Exploitation Deficiencies",
+        "Count of Quality of Life and Care Deficiencies",
+        "Count of Resident Assessment and Care Planning Deficiencies",
+        "Count of Nursing and Physician Services Deficiencies",
+        "Count of Resident Rights Deficiencies",
+        "Count of Nutrition and Dietary Deficiencies",
+        "Count of Pharmacy Service Deficiencies",
+        "Count of Environmental Deficiencies",
+        "Count of Administration Deficiencies",
+        "Count of Infection Control Deficiencies",
+        "Count of Emergency Preparedness Deficiencies",
+        "Count of Automatic Sprinkler Systems Deficiencies",
+        "Count of Construction Deficiencies",
+        "Count of Services Deficiencies",
+        "Count of Corridor Walls and Doors Deficiencies",
+        "Count of Egress Deficiencies",
+        "Count of Electrical Deficiencies",
+        "Count of Emergency Plans and Fire Drills Deficiencies",
+        "Count of Fire Alarm Systems Deficiencies",
+        "Count of Smoke Deficiencies",
+        "Count of Interior Deficiencies",
+        "Count of Gas and Vacuum and Electrical Systems Deficiencies",
+        "Count of Hazardous Area Deficiencies",
+        "Count of Illumination and Emergency Power Deficiencies",
+        "Count of Laboratories Deficiencies",
+        "Count of Medical Gases and Anaesthetizing Areas Deficiencies",
+        "Count of Smoking Regulations Deficiencies",
+        "Count of Miscellaneous Deficiencies",
+        "Location",
+        "Processing Date"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "Count of Gas and Vacuum and Electrical Systems Deficiencies",
+          "missing_count": 33
+        },
+        {
+          "column": "Count of Automatic Sprinkler Systems Deficiencies",
+          "missing_count": 33
+        },
+        {
+          "column": "Count of Construction Deficiencies",
+          "missing_count": 33
+        },
+        {
+          "column": "Count of Services Deficiencies",
+          "missing_count": 33
+        },
+        {
+          "column": "Count of Corridor Walls and Doors Deficiencies",
+          "missing_count": 33
+        },
+        {
+          "column": "Count of Egress Deficiencies",
+          "missing_count": 33
+        },
+        {
+          "column": "Count of Electrical Deficiencies",
+          "missing_count": 33
+        },
+        {
+          "column": "Count of Emergency Plans and Fire Drills Deficiencies",
+          "missing_count": 33
+        },
+        {
+          "column": "Count of Fire Alarm Systems Deficiencies",
+          "missing_count": 33
+        },
+        {
+          "column": "Count of Smoke Deficiencies",
+          "missing_count": 33
+        }
+      ]
+    },
+    {
+      "file_name": "Skilled_Nursing_Facility_Quality_Reporting_Program_National_Data_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/Skilled_Nursing_Facility_Quality_Reporting_Program_National_Data_Oct2024.csv",
+      "row_count": 24,
+      "column_count": 7,
+      "columns": [
+        "CMS Certification Number (CCN)",
+        "Measure Code",
+        "Score",
+        "Footnote",
+        "Start Date",
+        "End Date",
+        "Measure Date Range"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "CMS Certification Number (CCN)",
+          "missing_count": 0
+        },
+        {
+          "column": "Measure Code",
+          "missing_count": 0
+        },
+        {
+          "column": "Score",
+          "missing_count": 0
+        },
+        {
+          "column": "Footnote",
+          "missing_count": 0
+        },
+        {
+          "column": "Start Date",
+          "missing_count": 0
+        },
+        {
+          "column": "End Date",
+          "missing_count": 0
+        },
+        {
+          "column": "Measure Date Range",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "Skilled_Nursing_Facility_Quality_Reporting_Program_Provider_Data_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/Skilled_Nursing_Facility_Quality_Reporting_Program_Provider_Data_Oct2024.csv",
+      "row_count": 711072,
+      "column_count": 16,
+      "columns": [
+        "CMS Certification Number (CCN)",
+        "Provider Name",
+        "Address Line 1",
+        "City/Town",
+        "State",
+        "ZIP Code",
+        "County/Parish",
+        "Telephone Number",
+        "CMS Region",
+        "Measure Code",
+        "Score",
+        "Footnote",
+        "Start Date",
+        "End Date",
+        "Measure Date Range",
+        "LOCATION1"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "CMS Certification Number (CCN)",
+          "missing_count": 0
+        },
+        {
+          "column": "Provider Name",
+          "missing_count": 0
+        },
+        {
+          "column": "Address Line 1",
+          "missing_count": 0
+        },
+        {
+          "column": "City/Town",
+          "missing_count": 0
+        },
+        {
+          "column": "State",
+          "missing_count": 0
+        },
+        {
+          "column": "ZIP Code",
+          "missing_count": 0
+        },
+        {
+          "column": "County/Parish",
+          "missing_count": 0
+        },
+        {
+          "column": "Telephone Number",
+          "missing_count": 0
+        },
+        {
+          "column": "CMS Region",
+          "missing_count": 0
+        },
+        {
+          "column": "Measure Code",
+          "missing_count": 0
+        }
+      ]
+    },
+    {
+      "file_name": "Swing_Bed_SNF_data_Oct2024.csv",
+      "relative_path": "data/raw/supporting_extracted/Nursing_Homes_data/Swing_Bed_SNF_data_Oct2024.csv",
+      "row_count": 38064,
+      "column_count": 16,
+      "columns": [
+        "CMS Certification Number (CCN)",
+        "Provider Name",
+        "Address Line 1",
+        "Address Line 2",
+        "City/Town",
+        "State",
+        "ZIP Code",
+        "County/Parish",
+        "Telephone Number",
+        "CMS Region",
+        "Measure Code",
+        "Score",
+        "Footnote",
+        "Start Date",
+        "End Date",
+        "MeasureDateRange"
+      ],
+      "possible_provider_keys": [
+        "CMS Certification Number (CCN)"
+      ],
+      "duplicate_full_rows": 0,
+      "top_missing_columns": [
+        {
+          "column": "CMS Certification Number (CCN)",
+          "missing_count": 0
+        },
+        {
+          "column": "Provider Name",
+          "missing_count": 0
+        },
+        {
+          "column": "Address Line 1",
+          "missing_count": 0
+        },
+        {
+          "column": "Address Line 2",
+          "missing_count": 0
+        },
+        {
+          "column": "City/Town",
+          "missing_count": 0
+        },
+        {
+          "column": "State",
+          "missing_count": 0
+        },
+        {
+          "column": "ZIP Code",
+          "missing_count": 0
+        },
+        {
+          "column": "County/Parish",
+          "missing_count": 0
+        },
+        {
+          "column": "Telephone Number",
+          "missing_count": 0
+        },
+        {
+          "column": "CMS Region",
+          "missing_count": 0
+        }
+      ]
+    }
+  ]
+}
