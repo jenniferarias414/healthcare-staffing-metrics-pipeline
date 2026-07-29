@@ -1,5 +1,5 @@
 {
-  "verified_at_utc": "2026-07-29T15:34:08.623600+00:00",
+  "verified_at_utc": "2026-07-29T15:41:22.350958+00:00",
   "asset_dir": "project-assets",
   "master_file_found": true,
   "master_file_count": 1,
@@ -38,6 +38,7 @@
     "file_size_bytes": 219661827,
     "data_row_count": 1325324,
     "column_count": 33,
+    "encoding_used": "cp1252",
     "expected_column_count": 33,
     "missing_expected_columns": [],
     "extra_columns": [],

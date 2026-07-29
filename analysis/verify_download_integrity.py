@@ -169,6 +169,7 @@ def main() -> None:
             "file_size_bytes": master_path.stat().st_size,
             "data_row_count": csv_info["data_row_count"],
             "column_count": csv_info["column_count"],
+            "encoding_used": csv_info.get("encoding_used"),
             "expected_column_count": len(EXPECTED_MASTER_COLUMNS),
             "missing_expected_columns": missing_columns,
             "extra_columns": extra_columns,

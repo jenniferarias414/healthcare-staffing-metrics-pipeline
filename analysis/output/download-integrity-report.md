@@ -1,6 +1,6 @@
 # Download Integrity Report
 
-Verified at UTC: `2026-07-29T15:34:08.623600+00:00`
+Verified at UTC: `2026-07-29T15:41:22.350958+00:00`
 
 ## Summary
 
@@ -14,7 +14,7 @@ Verified at UTC: `2026-07-29T15:34:08.623600+00:00`
 - File size bytes: `219661827`
 - Data row count: `1325324`
 - Column count: `33`
-- Encoding used: `None`
+- Encoding used: `cp1252`
 - Expected column count: `33`
 - Missing expected columns: `[]`
 - Extra columns: `[]`
