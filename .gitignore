@@ -29,3 +29,6 @@ manifests/
 
 # Local project source materials / course-provided files
 project-assets/
+
+# Private project notes
+notes/private/
