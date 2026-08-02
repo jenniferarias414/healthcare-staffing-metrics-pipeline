@@ -2,157 +2,158 @@
 
 ## Purpose
 
-This document defines the proposed AWS-only architecture for the Healthcare Staffing Metrics project.
+This document defines the proposed AWS architecture for the Healthcare Staffing Metrics project.
 
 The project goal is to create a unified analytics view of nursing home staffing and facility performance. The system should support staffing metrics, facility utilization metrics, selected quality/rating comparisons, and a Streamlit dashboard.
+
+## Architecture Diagram
+
+![Healthcare Staffing Metrics Pipeline](../architecture/healthcare_pipeline.png)
 
 ## Architecture Summary
 
 Proposed flow:
 
-Google Drive source files  
-→ Python incremental ingestion  
-→ Amazon S3 raw zone  
-→ AWS Glue Data Catalog raw tables  
-→ AWS Glue PySpark transformation job  
-→ Amazon S3 curated zone using Parquet  
-→ AWS Glue Data Catalog curated tables  
-→ Amazon Athena  
+```text
+AWS Glue Workflow scheduled trigger
+→ AWS Glue Python Shell job for Google Drive ingestion
+→ Amazon S3 raw zone
+→ AWS Glue Data Catalog raw tables
+→ AWS Glue PySpark jobs for silver tables
+→ AWS Glue PySpark job for gold metrics table
+→ Amazon S3 curated Parquet tables
+→ AWS Glue Data Catalog curated tables
+→ Amazon Athena query layer
 → Streamlit dashboard
+```
 
-## Architecture Diagram - Text Version
+Supporting services:
 
-Google Drive Source Files  
-PBJ master CSV + supporting CMS files  
-↓  
-Python Ingestion Script  
-detect new files, validate file presence, validate schema, write manifest  
-↓  
-Amazon S3 Raw Zone  
-raw healthcare files retained by source and batch date  
-↓  
-AWS Glue Data Catalog  
-raw external table metadata  
-↓  
-AWS Glue PySpark Job  
-clean, cast, join provider files, calculate metrics  
-↓  
-Amazon S3 Curated Zone  
-curated Parquet analytics tables  
-↓  
-AWS Glue Data Catalog + Amazon Athena  
-curated table metadata and SQL query layer  
-↓  
-Streamlit Dashboard  
-staffing and facility performance insights
+- S3 ingestion manifest for lightweight file tracking
+- CloudWatch Logs for Glue job logs
+- SNS alerts if failure notification is needed
 
 ## Why This Architecture
 
 This design follows a simple AWS data lake pattern.
 
-### Google Drive as Source
+The pipeline uses AWS Glue Workflow to keep orchestration and job runtime consolidated in Glue. The first Glue job handles Python-based ingestion from Google Drive. Separate Glue PySpark jobs handle the transformation work for individual silver and gold outputs.
 
-The project instructions treat Google Drive as the source system. The ingestion process should be able to identify and process new files over time.
+This keeps the project easier to explain and maintain while still separating ingestion, transformation, and dashboard-ready outputs.
 
-### Python for Ingestion
+## Google Drive as Source
 
-Python is used for file ingestion because it is simple, flexible, and appropriate for pulling files from Google Drive or processing downloaded files locally during development.
+The project source files are provided through Google Drive.
 
-Python can also validate file names, schemas, file sizes, and checksums before writing data to S3.
+The ingestion job checks the Google Drive source files, compares file metadata against the S3 ingestion manifest, and loads only files that are new, changed, or previously failed.
 
-### Amazon S3 for Raw and Curated Storage
+## AWS Glue Workflow
+
+AWS Glue Workflow is used to coordinate the pipeline.
+
+The workflow can start from a scheduled trigger, run the ingestion job, and then run downstream transformation jobs after the required upstream step succeeds.
+
+## Glue Python Shell for Ingestion
+
+The ingestion step runs as an AWS Glue Python Shell job.
+
+This job is responsible for:
+
+- checking Google Drive file metadata
+- comparing files against the S3 ingestion manifest
+- loading new or changed files into S3 raw
+- updating the manifest with load status and errors
+
+## Amazon S3 for Raw and Curated Storage
 
 S3 is used as the data lake storage layer.
 
-Raw files are kept unchanged in the raw zone. Curated files are written separately after transformation. This makes the pipeline easier to audit, rerun, and explain.
+Raw files are kept unchanged in the raw zone. Curated files are written separately after transformation.
 
-### AWS Glue Data Catalog
+The raw zone keeps the original source files unchanged so the data can be reprocessed if needed.
 
-The Glue Data Catalog stores metadata about raw and curated datasets so the files in S3 can be queried as tables.
+## S3 Ingestion Manifest
 
-### AWS Glue / PySpark for Transformations
+An S3 manifest file tracks file-level ingestion state.
 
-PySpark is used for transformation because the dataset is large enough to justify distributed-style processing and because the project is intended to follow an AWS data lake pattern.
+The manifest can store source file ID, file name, modified time, file size/checksum, S3 raw path, batch ID, processing status, and error message.
 
-The Glue job will clean data, cast data types, join provider context, and calculate staffing/facility metrics.
+## AWS Glue Data Catalog
 
-### Parquet for Curated Outputs
+The Glue Data Catalog stores metadata about raw and curated datasets so files in S3 can be queried as tables.
 
-Curated data will be stored as Parquet because Parquet is columnar, efficient for analytics, and commonly used in data lake pipelines.
+The diagram shows raw and curated catalog layers separately to make the pipeline stages easier to understand. They are not separate catalog products.
 
-### Athena for SQL Queries
+## AWS Glue / PySpark for Transformations
 
-Athena provides a serverless SQL query layer over the curated S3 data. This avoids needing Snowflake, Redshift, or another external warehouse for this project.
+The transformation layer runs as multiple AWS Glue PySpark jobs for better control.
 
-### Streamlit for Dashboarding
+Planned jobs:
+
+1. `job_build_silver_provider` writes `silver_provider`.
+2. `job_build_silver_daily_staffing` writes `silver_daily_staffing`.
+3. `job_build_silver_date` writes `silver_date`.
+4. `job_build_gold_provider_monthly_metrics` writes `gold_provider_monthly_staffing_metrics`.
+
+Splitting the silver/gold tables into separate jobs provides better control. If one table fails, that job can be reviewed and rerun without rerunning the entire transformation layer.
+
+## Silver and Gold Outputs
+
+Silver tables are cleaned, standardized tables that stay close to the source data.
+
+Gold tables are dashboard-ready tables with joined and aggregated metrics.
+
+## Parquet for Curated Outputs
+
+Curated data will be stored as Parquet because it is columnar and efficient for analytics.
+
+## Athena for SQL Queries
+
+Athena provides a serverless SQL query layer over the curated S3 data.
+
+Athena uses the Glue Data Catalog metadata to understand the curated tables.
+
+## Streamlit for Dashboarding
 
 Streamlit is used to create an interactive dashboard for staffing and facility performance metrics.
 
-## Scheduling
-
-For a production-style AWS implementation, Amazon EventBridge can trigger ingestion and transformation jobs on a schedule.
-
-Example schedule:
-
-- Daily check for new Google Drive files
-- Trigger ingestion when new files are available
-- Run Glue transformation after successful ingestion
-- Refresh curated outputs used by the dashboard
-
 ## Monitoring and Logging
 
-CloudWatch can be used for:
+CloudWatch Logs can capture Glue job logs.
 
-- Ingestion logs
-- Glue job logs
-- Failure messages
-- Runtime metrics
-
-A production version could add SNS alerts for failed jobs or data quality failures.
+SNS can be used for failure alerts if notification is needed for the project demo.
 
 ## Failure Recovery
 
 The design supports recovery because raw files are retained in S3.
 
-If a transformation fails:
-
-1. Keep the raw file in S3.
-2. Review CloudWatch logs.
-3. Fix the issue.
-4. Rerun the Glue job for the affected batch.
-5. Regenerate curated outputs.
-
-Manifest files can track which files were processed and when.
+If ingestion fails, the manifest and CloudWatch logs help identify the failed file or batch. If transformation fails, the failed Glue job can be fixed and rerun from the preserved raw or silver input.
 
 ## Data Quality Checks
 
 Planned checks:
 
-- Expected file presence
-- File size and checksum capture
+- expected file presence
+- file size and checksum capture
 - CSV readability
-- Expected column validation
-- Row count checks
-- Duplicate provider/date checks
-- Missing value checks
-- Negative or invalid numeric checks
-- Join coverage checks between staffing and provider files
-- Metric sanity checks
+- expected column validation
+- row count checks
+- duplicate provider/date checks
+- missing value checks
+- negative or invalid numeric checks
+- join coverage checks between staffing and provider files
+- metric sanity checks
 
 ## Security
 
 Planned security practices:
 
-- No credentials committed to GitHub
+- no credentials committed to GitHub
 - S3 encryption
 - IAM least privilege
-- Environment variables or AWS Secrets Manager for credentials
-- Raw data kept out of the public repository
+- environment variables or AWS Secrets Manager for credentials
+- raw data kept out of the public repository
 
 ## Summary
 
-I chose this architecture because the project asks for an AWS-only data lake design with Google Drive as the source. 
-
-The raw files land in S3 first so the original data is preserved. Glue/PySpark handles the transformation layer, which is different from the Walmart project where dbt handled transformations. Curated Parquet tables are stored back in S3, registered in the Glue Data Catalog, queried with Athena, and displayed in Streamlit.
-
-The design is intentionally simple: raw storage, transformation, curated storage, query layer, dashboard. It is enough to show an end-to-end pipeline without over-engineering the project.
+The design keeps orchestration and job runtime inside AWS Glue, preserves original source files in S3 raw, builds separate silver/gold outputs with Glue/PySpark jobs, writes curated Parquet tables to S3, registers metadata in the Glue Data Catalog, queries with Athena, and displays the results in Streamlit.

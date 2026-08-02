@@ -8,15 +8,19 @@ The system should help explain how nurse availability, staffing workload, and re
 
 ## Technical Objective
 
-Build a simple AWS-based data pipeline that:
+Build a simple AWS-based data lake pipeline that:
 
-1. Ingests healthcare staffing and supporting facility files.
-2. Stores raw data in Amazon S3.
-3. Transforms source data using PySpark.
-4. Writes curated analytics tables to S3.
-5. Registers curated tables in the AWS Glue Data Catalog.
-6. Supports querying through Athena.
-7. Presents selected metrics in a Streamlit dashboard.
+1. Uses AWS Glue Workflow to schedule and coordinate the pipeline.
+2. Runs Google Drive ingestion in a Glue Python Shell job.
+3. Tracks incremental file loading with an S3 ingestion manifest.
+4. Stores raw source files unchanged in Amazon S3.
+5. Registers raw table metadata in the AWS Glue Data Catalog.
+6. Transforms source data using separate Glue/PySpark jobs.
+7. Writes curated silver and gold analytics tables to S3 as Parquet.
+8. Registers curated table metadata in the AWS Glue Data Catalog.
+9. Supports querying through Athena.
+10. Presents selected metrics in a Streamlit dashboard.
+11. Uses CloudWatch Logs and optional SNS alerts for monitoring and failure notification.
 
 ## Source Data
 
@@ -28,7 +32,9 @@ This file contains daily provider-level staffing and census data.
 
 Expected grain:
 
-One row per provider and work date.
+```text
+one row per provider and work date
+```
 
 Expected key columns:
 
@@ -68,40 +74,138 @@ Likely useful fields include:
 - ownership type
 - provider type
 
+## Ingestion Plan
+
+The ingestion step runs as an AWS Glue Python Shell job inside an AWS Glue Workflow.
+
+The ingestion job will:
+
+1. Check the Google Drive source file list and metadata.
+2. Compare source file metadata against an S3 ingestion manifest.
+3. Load files that are new, changed, or previously failed.
+4. Skip files that already loaded successfully and have not changed.
+5. Write original source files to the S3 raw zone.
+6. Update the S3 manifest with file status, batch ID, S3 path, and errors.
+
+## Raw Layer
+
+Raw files are stored unchanged in Amazon S3.
+
+The raw layer acts as the recovery point for the pipeline. If transformation logic changes or a later job fails, the pipeline can reprocess data from the raw files instead of downloading the files again from Google Drive.
+
+## Curated Layer
+
+The curated layer is split into silver and gold outputs.
+
+Silver tables are cleaned and standardized.
+
+Gold tables are dashboard-ready and metric-focused.
+
+## Transformation Job Plan
+
+The transformation layer will be split into individual Glue jobs for better control and troubleshooting.
+
+Planned jobs:
+
+1. `job_build_silver_provider`
+   - Reads provider source files from S3 raw.
+   - Cleans provider identifiers, provider names, state, bed count, ratings, ownership, and facility fields.
+   - Writes `silver_provider` to S3 curated/silver.
+
+2. `job_build_silver_daily_staffing`
+   - Reads PBJ daily staffing data from S3 raw.
+   - Parses work dates and casts census/staffing hour fields.
+   - Calculates row-level staffing measures.
+   - Writes `silver_daily_staffing` to S3 curated/silver.
+
+3. `job_build_silver_date`
+   - Builds a simple date reference table from staffing work dates.
+   - Writes `silver_date` to S3 curated/silver.
+
+4. `job_build_gold_provider_monthly_metrics`
+   - Reads silver provider, silver daily staffing, and silver date tables.
+   - Joins datasets and calculates dashboard-ready monthly metrics.
+   - Writes `gold_provider_monthly_staffing_metrics` to S3 curated/gold.
+
+Splitting table creation into separate jobs provides better control. If one table fails, the failed job can be reviewed and rerun without rerunning the entire transformation layer.
+
 ## Planned Data Model
 
 The curated model will be simple and dashboard-focused:
 
-1. `dim_provider`
-2. `dim_date`
-3. `fact_daily_staffing`
-4. `mart_provider_monthly_staffing`
+1. `silver_provider`
+2. `silver_daily_staffing`
+3. `silver_date`
+4. `gold_provider_monthly_staffing_metrics`
+
+## Planned Metric Logic
+
+Initial calculated fields:
+
+- total nurse hours
+- RN hours per resident day
+- total nurse hours per resident day
+- contract staff ratio
+- bed utilization / occupancy proxy
+
+Initial formulas:
+
+```text
+total_nurse_hours = Hrs_RN + Hrs_LPN + Hrs_CNA
+contract_nurse_hours = Hrs_RN_ctr + Hrs_LPN_ctr + Hrs_CNA_ctr
+total_nurse_hours_per_resident_day = total_nurse_hours / MDScensus
+rn_hours_per_resident_day = Hrs_RN / MDScensus
+contract_staff_ratio = contract_nurse_hours / total_nurse_hours
+bed_utilization_rate = MDScensus / certified_bed_count
+```
 
 ## Dashboard Plan
 
 The Streamlit dashboard will include:
 
-- Summary KPI cards
-- State filter
-- Provider filter
-- Staffing coverage trends
-- Facilities with low staffing coverage
-- Contract staff ratio analysis
-- Bed utilization / occupancy proxy
-- Staffing comparison by state or rating
+- summary KPI cards
+- state filter
+- provider filter
+- staffing coverage trends
+- facilities with low staffing coverage
+- contract staff ratio analysis
+- bed utilization / occupancy proxy
+- staffing comparison by state or rating
+
+## Error Handling and Monitoring
+
+CloudWatch Logs will capture Glue job logs.
+
+SNS can be added for failure alerts if needed.
+
+The S3 ingestion manifest will track file-level status so failed ingestion attempts can be reviewed and retried.
+
+## Out of Scope for Initial Build
+
+These metrics are not planned for the first build unless supporting fields are found:
+
+- overtime percentage
+- individual nurse shifts
+- payroll cost
+- patient satisfaction
+- true length of stay
 
 ## Why This Design
 
-This design keeps the project simple, explainable, and aligned with the AWS-only project requirement.
+This design keeps the project simple, explainable, and aligned with the AWS project requirement.
 
 The project demonstrates:
 
-- Source discovery
-- File validation
-- Data lake architecture
-- Raw and curated zones
+- source discovery
+- file validation
+- AWS Glue Workflow orchestration
+- data lake architecture
+- raw, silver, and gold outputs
+- incremental file tracking with an S3 manifest
 - PySpark transformations
-- Data modeling
-- Metric calculation
-- Dashboarding
-- Documentation
+- Data Catalog metadata
+- Athena querying
+- data modeling
+- metric calculation
+- dashboarding
+- documentation
