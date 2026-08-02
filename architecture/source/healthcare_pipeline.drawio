@@ -151,6 +151,9 @@
         <mxCell id="8okVXyOXmZd5J3oh-y37-55" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;font-size: 7px;&quot;&gt;schema registration&lt;/span&gt;" vertex="1">
           <mxGeometry height="30" width="120" x="408.53" y="260" as="geometry" />
         </mxCell>
+        <mxCell id="8okVXyOXmZd5J3oh-y37-62" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Separate Glue jobs by table&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;provider / staffing / metrics&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="110.92" x="244.54" y="270" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
