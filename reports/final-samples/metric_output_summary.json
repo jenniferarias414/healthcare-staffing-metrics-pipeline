@@ -1,0 +1,11 @@
+{
+  "generated_at_utc": "2026-08-03T12:34:22.182611+00:00",
+  "silver_provider_rows": 14814,
+  "silver_daily_staffing_rows": 1325324,
+  "silver_date_rows": 91,
+  "gold_provider_monthly_staffing_metrics_rows": 43692,
+  "date_min": "2024-04-01 00:00:00",
+  "date_max": "2024-06-30 00:00:00",
+  "distinct_providers_in_staffing": 14564,
+  "distinct_providers_in_provider_dim": 14814
+}
