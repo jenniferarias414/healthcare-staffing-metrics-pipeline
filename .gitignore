@@ -32,3 +32,21 @@ project-assets/
 
 # Private project notes
 notes/private/
+
+# Local/raw/curated data files
+data/raw/**
+data/curated/**
+!data/raw/
+!data/raw/master/
+!data/raw/supporting/
+!data/raw/master/.gitkeep
+!data/raw/supporting/.gitkeep
+!data/curated/
+!data/curated/silver/
+!data/curated/gold/
+!data/curated/silver/.gitkeep
+!data/curated/gold/.gitkeep
+
+# Private notes and source materials
+notes/private/
+project-assets/

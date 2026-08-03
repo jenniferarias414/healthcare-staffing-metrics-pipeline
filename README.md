@@ -9,11 +9,14 @@ The goal is to ingest healthcare staffing files, validate the source data, trans
 ## Planned Architecture
 
 Google Drive source files  
-→ Python incremental ingestion  
+→ AWS Glue Workflow scheduled trigger  
+→ AWS Glue Python Shell job for Google Drive ingestion  
 → Amazon S3 raw zone  
-→ AWS Glue / PySpark transformations  
-→ Amazon S3 curated zone  
-→ AWS Glue Data Catalog  
+→ AWS Glue Data Catalog raw tables  
+→ separate AWS Glue/PySpark jobs for silver tables  
+→ AWS Glue/PySpark job for gold metrics table  
+→ Amazon S3 curated Parquet tables  
+→ AWS Glue Data Catalog curated tables  
 → Amazon Athena query layer  
 → Streamlit dashboard
 
@@ -29,7 +32,7 @@ Planned calculable metrics based on available data:
 
 ## Project Status
 
-Current phase: Source discovery, profiling, and architecture design for SME approval.
+Current phase: Local curated pipeline, metric outputs, documentation, and dashboard validation after SME architecture approval.
 
 ## Repository Structure
 

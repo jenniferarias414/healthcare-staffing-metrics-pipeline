@@ -18,12 +18,12 @@ PROVNUM + WorkDate
 
 The curated model will include:
 
-1. `dim_provider`
-2. `dim_date`
-3. `fact_daily_staffing`
-4. `mart_provider_monthly_staffing`
+1. `silver_provider`
+2. `silver_date`
+3. `silver_daily_staffing`
+4. `gold_provider_monthly_staffing_metrics`
 
-## dim_provider
+## silver_provider
 
 ### Grain
 
@@ -58,7 +58,7 @@ Possible join key:
 - PBJ `PROVNUM`
 - Provider Information CCN / CMS Certification Number
 
-## dim_date
+## silver_date
 
 ### Grain
 
@@ -83,7 +83,7 @@ Supports time-based reporting.
 
 Derived from distinct `WorkDate` values in the PBJ staffing file.
 
-## fact_daily_staffing
+## silver_daily_staffing
 
 ### Grain
 
@@ -120,7 +120,7 @@ Main source:
 
 - `PBJ_Daily_Nurse_Staffing_Q2_2024.csv`
 
-## mart_provider_monthly_staffing
+## gold_provider_monthly_staffing_metrics
 
 ### Grain
 
@@ -141,7 +141,7 @@ Supports dashboard reporting at a less detailed level than daily data.
 - `avg_total_nurse_hours_per_resident_day`
 - `avg_rn_hours_per_resident_day`
 - `avg_contract_staff_ratio`
-- `avg_bed_utilization_rate`
+- `bed_utilization_rate`
 
 ## Why Include a Monthly Mart
 
@@ -153,13 +153,13 @@ The dashboard can still use daily data if needed, but most business users will u
 
 Primary provider join:
 
-fact_daily_staffing.provider_id  
-→ dim_provider.provider_id
+silver_daily_staffing.provider_id  
+→ silver_provider.provider_id
 
 Date join:
 
-fact_daily_staffing.date_id  
-→ dim_date.date_id
+silver_daily_staffing.date_id  
+→ silver_date.date_id
 
 ## Modeling Notes
 
