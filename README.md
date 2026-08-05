@@ -22,21 +22,34 @@ Google Drive source files
 
 ## Initial Metrics
 
-Planned calculable metrics based on available data:
+Calculated metrics based on the available data:
 
-1. Total nurse hours per resident day
-2. RN hours per resident day
-3. Contract staff ratio
-4. Bed utilization / occupancy proxy
-5. Staffing level comparison against provider ratings or quality indicators
+1. Total nurse hours
+2. Total nurse hours per resident day
+3. RN hours per resident day
+4. Contract staff ratio
+5. Bed utilization rate
+
+These metrics were selected because they can be traced to fields in the PBJ staffing file and provider information file.
+
+Metrics such as overtime, shifts per nurse, length of stay, readmissions, payroll cost, and patient satisfaction were not included in the first build because the required fields were not available or were not validated for this version.
 
 ## Project Status
 
 Current phase: Local curated pipeline, metric outputs, documentation, and dashboard validation after SME architecture approval.
 
+Implementation note: This repo includes a local validation script plus AWS-ready Glue job scripts. The single local script was used to validate outputs quickly due to project timeline; the Glue job scripts show how the same logic maps to the approved Glue Workflow design.
+
+Key docs:
+
+- `docs/implementation-status.md` - what was built, validated, and left as AWS-ready structure
+- `docs/metric-calculation-notes.md` - metric formulas and source columns
+- `docs/project-question-responses.md` - which project questions the data can and cannot answer
+
 ## Repository Structure
 
 - `analysis/` - source profiling scripts and outputs
+- `glue_jobs/` - AWS-ready Glue Python Shell and Glue/PySpark job scripts
 - `scripts/` - ingestion, transformation, and metric scripts
 - `docs/` - architecture, solution design, data model, and metric documentation
 - `streamlit_app/` - dashboard application
