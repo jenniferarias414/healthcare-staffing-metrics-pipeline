@@ -4,6 +4,8 @@ This document explains why each technology was selected for the Healthcare Staff
 
 The approved design uses AWS services for ingestion, storage, transformation, cataloging, querying, and dashboard support. The submitted build also includes a local validation script to prove the data logic before mapping the work into AWS Glue job scripts.
 
+![Healthcare Staffing Metrics Pipeline Architecture](architecture/healthcare_pipeline.png)
+
 ## Google Drive
 
 Google Drive was used because the project source files were provided there.
