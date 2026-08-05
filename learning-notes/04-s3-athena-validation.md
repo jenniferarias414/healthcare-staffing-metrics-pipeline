@@ -28,7 +28,7 @@ The raw zone keeps source files unchanged. The curated zone stores cleaned and a
 
 ## Why Parquet Was Used
 
-Parquet is a columnar file format that works well for analytics.
+Parquet is a columnar file format designed for analytics queries.
 
 It is more efficient for query tools like Athena than reading large CSV files repeatedly.
 

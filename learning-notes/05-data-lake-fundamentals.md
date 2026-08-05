@@ -66,7 +66,7 @@ That means the data can stay in S3, while Athena provides SQL access.
 
 This project uses a data lake pattern because the source files are CSV/ZIP files and the final use case is analytics.
 
-The same pattern works well when a team needs to:
+The same pattern is useful when a team needs to:
 
 - keep raw source files
 - clean and join files later
