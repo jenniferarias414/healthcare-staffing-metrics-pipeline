@@ -4,7 +4,7 @@ This document explains why each technology was selected for the Healthcare Staff
 
 The approved design uses AWS services for ingestion, storage, transformation, cataloging, querying, and dashboard support. The submitted build also includes a local validation script to prove the data logic before mapping the work into AWS Glue job scripts.
 
-![Healthcare Staffing Metrics Pipeline Architecture](architecture/healthcare_pipeline.png)
+![Healthcare Staffing Metrics Pipeline Architecture](../architecture/healthcare_pipeline.png)
 
 ## Google Drive
 
@@ -20,7 +20,7 @@ AWS Glue Workflow was selected for the approved pipeline design because the proj
 
 The workflow gives one place to coordinate everything: the ingestion job, the silver table jobs, and the gold metrics job.
 
-This also matches the SME feedback to keep the pipeline under eGlue and split table creation into separate jobs for better control.
+This also matches the SME feedback to keep the pipeline under Glue and split table creation into separate jobs for better control.
 
 ## AWS Glue Python Shell
 
