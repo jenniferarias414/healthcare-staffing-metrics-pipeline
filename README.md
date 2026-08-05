@@ -46,6 +46,13 @@ Key docs:
 - `docs/metric-calculation-notes.md` - metric formulas and source columns
 - `docs/project-question-responses.md` - which project questions the data can and cannot answer
 
+
+## Final Reference Docs
+
+- [Data dictionary](docs/data-dictionary.md)
+- [Data lake fundamentals notes](learning-notes/05-data-lake-fundamentals.md)
+- [Streamlit dashboard notes](learning-notes/06-streamlit-dashboard-notes.md)
+
 ## Repository Structure
 
 - `analysis/` - source profiling scripts and outputs
