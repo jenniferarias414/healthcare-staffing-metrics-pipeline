@@ -115,7 +115,7 @@ Athena uses the Glue Data Catalog metadata to understand the curated tables.
 
 ## Streamlit for Dashboarding
 
-Streamlit is used to create an interactive dashboard for staffing and facility performance metrics.
+Streamlit is used for the staffing and facility performance dashboard.
 
 ## Monitoring and Logging
 
@@ -156,4 +156,4 @@ Planned security practices:
 
 ## Summary
 
-The design keeps orchestration and job runtime inside AWS Glue, preserves original source files in S3 raw, builds separate silver/gold outputs with Glue/PySpark jobs, writes curated Parquet tables to S3, registers metadata in the Glue Data Catalog, queries with Athena, and displays the results in Streamlit.
+The design keeps orchestration and job runtime inside AWS Glue. It preserves original source files in S3 raw, builds separate silver/gold outputs with Glue/PySpark jobs, writes curated Parquet tables to S3, registers metadata in the Glue Data Catalog, queries with Athena, and supports the Streamlit dashboard.
