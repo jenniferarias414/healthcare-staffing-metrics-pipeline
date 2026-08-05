@@ -6,7 +6,7 @@ The goal of this project is to create a healthcare staffing analytics pipeline u
 
 ## Planned Flow
 
-Google Drive source files are treated as the source system. Files are ingested into an S3 raw zone, transformed with PySpark, stored as curated Parquet files, queried with Athena, and visualized with Streamlit.
+Google Drive source files are treated as the source system. The approved design ingests files into S3 raw, transforms them with PySpark, stores curated Parquet files, queries them with Athena, and supports a Streamlit dashboard.
 
 ## Why Start with Source Profiling
 
