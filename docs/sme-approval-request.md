@@ -33,7 +33,7 @@ The S3 raw zone keeps the original source files unchanged so the data can be rep
 
 The transformation layer is split into separate Glue/PySpark jobs for better control. Planned jobs include a provider silver table job, a daily staffing silver table job, a date/reference silver table job, and a downstream gold metrics table job for dashboard-ready outputs.
 
-The curated tables are registered in the Glue Data Catalog, queried by Athena, and displayed in Streamlit.
+In the approved design, the curated tables are registered in the Glue Data Catalog, queried by Athena, and used by the Streamlit dashboard layer.
 
 CloudWatch Logs captures Glue job logs, and SNS can be added for failure alerts if needed.
 
