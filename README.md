@@ -47,6 +47,30 @@ Key docs:
 - `docs/project-question-responses.md` - which project questions the data can and cannot answer
 
 
+
+## Validation Screenshots
+
+The screenshots below show the main pieces of the project working.
+
+### Local Pipeline Output
+
+The local validation script created the silver and gold Parquet outputs and generated the metric summary files.
+
+<img src="screenshots/full-walkthrough/04-local-pipeline-curated-outputs-success.png" width="900" alt="Local pipeline curated output success screenshot">
+
+### Streamlit Dashboard
+
+The dashboard reads the generated gold metrics table and displays staffing, census, bed utilization, and contract staffing views.
+
+<img src="screenshots/full-walkthrough/05-streamlit-dashboard-success.png" width="900" alt="Streamlit dashboard screenshot">
+
+### Athena Query Validation
+
+The curated gold output was uploaded to S3 and queried through Athena.
+
+<img src="screenshots/full-walkthrough/08-athena-query-success.png" width="900" alt="Athena query validation screenshot">
+
+
 ## Final Reference Docs
 
 - [Data dictionary](docs/data-dictionary.md)
