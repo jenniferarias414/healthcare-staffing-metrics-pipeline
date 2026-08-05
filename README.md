@@ -8,6 +8,8 @@ The goal is to ingest healthcare staffing files, validate the source data, trans
 
 ## Planned Architecture
 
+![Healthcare Staffing Metrics Pipeline Architecture](architecture/healthcare_pipeline.png)
+
 Google Drive source files  
 → AWS Glue Workflow scheduled trigger  
 → AWS Glue Python Shell job for Google Drive ingestion  
