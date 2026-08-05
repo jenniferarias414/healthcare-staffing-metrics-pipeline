@@ -6,6 +6,12 @@ This project builds an AWS-based healthcare staffing analytics pipeline for nurs
 
 The goal is to ingest healthcare staffing files, validate the source data, transform the data into analytics-ready tables, calculate staffing and facility metrics, and present the results in a Streamlit dashboard.
 
+## Project Walkthrough Video
+
+[Watch the project walkthrough video](https://youtu.be/dPdOA_MplRY)
+
+This short video walks through the architecture, local validation build, S3/Athena validation, and Streamlit dashboard.
+
 ## Planned Architecture
 
 ![Healthcare Staffing Metrics Pipeline Architecture](architecture/healthcare_pipeline.png)
